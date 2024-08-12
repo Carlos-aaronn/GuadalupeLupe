@@ -1,0 +1,100 @@
+/* Estilos generales para el cuerpo */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ff9525;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para el contenedor del formulario */
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilos del título */
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos de las etiquetas */
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilos de los campos de entrada */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Cambio de estilo al enfocar los campos */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Estilos de los botones */
+.contact-form button {
+    background-color: #ff9525;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.8s ease;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+/* Estilos del botón de regreso */
+.contact-form .back-button {
+    background-color: #6c757d;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.contact-form button:hover {
+    background-color: #484848 ;
+    text-decoration: none;
+}
+
+/* Estilos para el enlace de regreso */
+.contact-form .back-button a {
+    color: #fff;
+    text-decoration: none;
+}
+.contact-form a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos del mensaje de respuesta */
+#responseMessage {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}

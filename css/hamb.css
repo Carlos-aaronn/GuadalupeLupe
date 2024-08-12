@@ -1,0 +1,98 @@
+body{
+	margin: 0;
+}
+
+.banner {
+    background-color: #ff9525; /* Naranja */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Contenedor principal de la galería */
+.gallery-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilos para las filas de la galería */
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Contenedor de cada imagen */
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Estilos de la imagen */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom al pasar el mouse */
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Superposición para el nombre de la imagen */
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Estilos para el botón de regresar */
+.back-button {
+    display: block;
+    margin: 8px auto;
+    background-color: #ff9525;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.back-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color:  #484848;
+}

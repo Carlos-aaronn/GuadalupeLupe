@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pruestilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Fast Feast</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilos para el fondo de la sección superior */
+    .header {
+      position: relative;
+      height: 600px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .header img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .header img.active {
+      opacity: 1;
+    }
+
+    /* Estilos para el título */
+    .titulo {
+      position: relative; /* Asegura que el texto esté por encima de las imágenes */
+      background-color: rgba(0, 0, 0, 0.5); 
+      padding: 20px;
+      font-size: 36px;
+      text-align: center;
+      opacity: 1;
+      animation: fadeInOut 10s infinite;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .logo img {
+      height: 100%;
+      vertical-align: top;
+      width: auto;
+    }
+
+    /* Estilos para el banner */
+    .banner {
+      font-family: "Archivo", sans-serif;
+      position: sticky;
+      top: 0;
+      background-color: #ff9525;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000; 
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .banner a {
+      border-top: 15%;
+      color: white; 
+      text-decoration: none; 
+      padding: 10px 20px; 
+      transition: color 0.3s, background-color 0.3s; 
+    }
+
+    .banner a:hover {
+      color: #000; 
+      background-color: rgba(255, 255, 255, 0.1); 
+      border-radius: 5px; 
+    }
+
+    .banner a.active {
+      color: #fff; 
+      font-weight: 700; 
+    }
+
+    /* Primera sección - blanco con una imagen estática y texto */
+    .seccion-uno {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 40px;
+    }
+
+    .imagen-estatica {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .imagen-estatica img {
+      width: 100%;
+      height: 400px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+
+    .texto {
+      flex: 1;
+      text-align: left;
+    }
+
+    .texto h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .texto p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* Segunda sección - cuatro imágenes con enlaces */
+    .seccion-dos {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: #ff9525;
+    }
+
+    .categoria {
+      position: relative;
+      width: 200px;
+      height: 300px;
+      overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+    }
+
+    .categoria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .categoria:hover img {
+      transform: scale(1.1); /* Hace zoom en la imagen */
+    }
+
+    .categoria .nombre-categoria {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .categoria:hover .nombre-categoria {
+      opacity: 1; /* Muestra el nombre de la categoría al pasar el mouse */
+    }
+
+    /* Tercera sección - patrocinadores y redes sociales */
+    .seccion-tres {
+      width: 100%;
+      background-color: #fff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .patrocinadores {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .patrocinadores img {
+      margin: 5 5px;
+      height: 50px;
+      margin-right: 60px;
+    }
+
+    .redes-sociales {
+      display: flex;
+      justify-content: center;
+    }
+
+    .redes-sociales img {
+      margin: 15 10px;
+      height: 30px;
+    }
+    .patrocinadores parrafo{
+      margin-left: 105px;
+    }
+    .patrocinadores img{
+      margin-top: 50px;
+    }
+.part-footer{
+  width: 100%;
+  text-align: center;
+}
+.social-media a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: black; /* Color negro por defecto */
+    font-size: 24px;
+    transition: color 0.8s ease; /* Transición suave al cambiar de color */
+    margin-bottom: 10px;
+}
+
+.social-media a:hover {
+    color: #ff9525; /* Cambia a blanco cuando pases el mouse */
+}
+.part-footer h4{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.texto h1{
+  font-size: 18px;
+  color: orange;
+}
+.texto h2{
+  color: orange;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Carrusel de imágenes (Sección superior) -->
+  <div class="header">
+    <img src="img/1.jpg" alt="Imagen 1" class="active">
+    <img src="img/2.jpg" alt="Imagen 2">
+    <img src="img/3.jpg" alt="Imagen 3">
+    <img src="img/4.jpg" alt="Imagen 4">
+    <img src="img/5.jpg" alt="Imagen 5">
+    <img src="img/6.jpg" alt="Imagen 6">
+    <div class="titulo">
+      <h1>Fast Feast</h1>
+    </div>
+  </div>
+  
+  <!-- Banner fijo -->
+  <div class="banner">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+    <div class="enlaces-header">
+      <a href="contacto.html">Contáctanos</a>
+      <a href="ubicanos.html">Ubícanos</a>
+    </div>
+  </div>
+
+  <!-- Primera sección (Imagen estática) -->
+  <div class="seccion-uno">
+    <div class="imagen-estatica">
+      <img src="img/r2.jpg" alt="Imagen estática">
+    </div>
+    <div class="texto">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos un negocio de comida rápida apasionado por ofrecerte los mejores sabores en un ambiente acogedor y familiar. Nuestro objetivo es brindarte una experiencia culinaria única, con ingredientes frescos y de alta calidad, preparados al momento para que disfrutes de una comida sabrosa y satisfactoria. Ya sea que busques una cena rápida con amigos, un lugar para relajarte después del trabajo, o simplemente quieras satisfacer tus antojos, estamos aquí para servirte con una sonrisa y un menú que no te dejará indiferente.</p>
+      <h1>¡Ven y descubre por qué somos el lugar favorito para los amantes de la buena comida rápida!</h1>
+    </div>
+  </div>
+
+  <!-- Segunda sección -->
+  <div class="seccion-dos">
+    <div class="categoria">
+      <a href="categoria1.html">
+      <a href="pizzas.html"><img src="img/1.jpg" alt="Categoría 1"></a>  
+        <div class="nombre-categoria">Pizza</div>
+      </a>
+    </div>
+    <div class="categoria">
+      <a href="categoria2.html">
+      <a href="alitas.html"><img src="img/2.jpg" alt="Categoría 2"></a>  
+        <div class="nombre-categoria">Alitas</div>
+      </a>
+    </div>
+    <div class="categoria">
+      <a href="categoria3.html">
+      <a href="hamburguesas.html"><img src="img/3.jpg" alt="Categoría 3"></a>  
+        <div class="nombre-categoria">Hamburguesas</div>
+      </a>
+    </div>
+    <div class="categoria">
+      <a href="categoria4.html">
+      <a href="bebidas.html"><img src="img/b1.jpg" alt="Categoría 4"></a>  
+        <div class="nombre-categoria">Bebidas</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Tercera sección -->
+  <div class="seccion-tres">
+    <div class="patrocinadores">
+      <div class="parrafo">
+        <p>Nuestros patrocinadores</p>
+      </div>
+      <img src="img/bimbo.jpg" alt="Patrocinador 1">
+      <img src="img/ciel.png" alt="Patrocinador 2">
+      <img src="img/fanta.png" alt="Patrocinador 3">
+      <img src="img/heinz.png" alt="Patrocinador 4">
+      <img src="img/morena.png" alt="Patrocinador 5">
+    </div>
+    <div class="part-footer">
+		  <h4>Siguenos en nuestras redes sociales</h4><br>
+			<div class="social-media">
+				<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+			</div><br>
+		</div><br>
+  </div>
+
+  <script>
+    // Carrusel para la sección superior
+    const images = document.querySelectorAll('.header img');
+    let currentImageIndex = 0;
+
+    function changeImage() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }
+
+    setInterval(changeImage, 3000); // Cambiar imagen cada 3 segundos
+  </script>
+</body>
+</html>
